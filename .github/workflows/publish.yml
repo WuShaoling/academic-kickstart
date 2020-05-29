@@ -36,6 +36,8 @@ jobs:
       - name: Test git status
         run: |
           pwd
+          cd public
+          pwd
           echo ----------------------
           export GIT_CLEAN=hello
           echo ${GIT_CLEAN}
@@ -50,7 +52,8 @@ jobs:
         if: ${{ env.GitClean == '' }}
         run: |
           echo 123
-          echo env.GitClean
+          echo ${{ env.GitClean }}
+          echo ${GIT_CLEAN}
           echo 123
 
       # - name: Push changes to X-lab2017.github.io
