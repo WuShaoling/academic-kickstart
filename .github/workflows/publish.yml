@@ -32,8 +32,6 @@ jobs:
           mv public_temp.git/.git public/.git
           cd ./public
           git add .
-          git commit -m "${{ github.event.head_commit.message }}"
-          cd ..
 
       - name: Test git status
         run: |
