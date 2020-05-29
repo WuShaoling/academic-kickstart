@@ -36,12 +36,17 @@ jobs:
           cd ..
 
       - name: Test git status
-        env: 
-          GitClean: ${{ echo git status -s }}
         run: |
-          echo 123
-          echo env.GitClean
-          echo 123
+          pwd
+          echo ----------------------
+          export GIT_CLEAN=hello
+          echo ${GIT_CLEAN}
+          echo {{ env.GIT_CLEAN }}
+          echo ----------------------
+          export GIT_CLEAN=$(git status -s)
+          echo ${GIT_CLEAN}
+          echo {{ env.GIT_CLEAN }}
+          echo ----------------------
 
       - name: Deploy
         if: ${{ env.GitClean == '' }}
