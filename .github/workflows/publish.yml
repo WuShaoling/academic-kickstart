@@ -50,9 +50,10 @@ jobs:
           echo ${GIT_CLEAN}
           echo ${{ env.GIT_CLEAN }}
           echo ----------------------
+        env: 
+          GIT_CLEAN: ${GIT_CLEAN}
 
       - name: Deploy
-        if: ${{ env.GitClean == '' }}
         run: |
           echo 123
           echo ${{ env.GIT_CLEAN }}
