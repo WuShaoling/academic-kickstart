@@ -6,6 +6,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    env: 
+      GIT_CLEAN: NOT_NULL
 
     steps:
       - name: Checkout
