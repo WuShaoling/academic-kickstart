@@ -46,6 +46,10 @@ jobs:
           echo ${GIT_CLEAN}
           echo ${{ env.GIT_CLEAN }}
           echo ----------------------
+          export GIT_CLEAN=hello
+          echo ${GIT_CLEAN}
+          echo ${{ env.GIT_CLEAN }}
+          echo ----------------------
 
       - name: Deploy
         if: ${{ env.GitClean == '' }}
